@@ -21,7 +21,7 @@ var autoOpenBrowser = !!config.dev.autoOpenBrowser
 var proxyTable = config.dev.proxyTable
 
 var app = express()
-
+// 后台请求配置开始
 var appData = require('../data.json');
 var seller = appData.seller;
 var goods = appData.goods;
@@ -51,7 +51,7 @@ apiRoutes.get('/ratings', function (req, res) {
 });
 
 app.use('/api', apiRoutes);
-
+//后台请求配置结束
 var compiler = webpack(webpackConfig)
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
