@@ -9,10 +9,24 @@ import goods from './components/goods/goods'
 import ratings from './components/ratings/ratings'
 import seller from './components/seller/seller'
 import './common/stylus/index.styl'
+import Vuex from 'vuex'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
 Vue.use(VueResource)
+Vue.use(Vuex)
+const store = new Vuex.Store({
+  state: {
+    count: 0
+  },
+  // 添加的商品元素
+  addCartEl: {},
+  mutations: {
+    increment(state) {
+      state.count++
+    }
+  }
+})
 let routes = [
   { path: '/goods', component: goods },
   { path: '/ratings', component: ratings },
@@ -28,6 +42,10 @@ let router = new VueRouter({
 new Vue({
   el: '#app',
   router,
-  template: '<App/>',
-  components: { App }
+  store,
+  data: {
+    eventHub: new Vue()
+  },
+  render: h => h(App)
 })
+router.push('goods')
