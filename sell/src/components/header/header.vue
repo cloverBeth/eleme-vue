@@ -154,7 +154,6 @@
               bg-image('invoice_1')
             &.special
               bg-image('special_1')
-
           .text
             line-height :12px
             font-size:10px
@@ -179,30 +178,32 @@
           font-size:10px
 
     .bulletin-wrapper
-      height:28px
-      line-height:28px
-      padding:0 55px 0 12px
+      position: relative
+      height: 28px
+      line-height: 28px
+      padding: 0 22px 0 12px
       background:rgba(7,17,27,0.2)
-      overflow: hidden
-      text-overflow:ellipsis
       white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
       .bulletin-title
-        display:inline-block
+        display: inline-block
+        vertical-align: top
+        margin-top: 8px
         width: 22px
         height: 12px
         bg-image('bulletin')
-        vertical-align: middle;
-        background-size:22px 12px
-        background-repeat:no-repeat
+        background-size: 22px 12px
+        background-repeat: no-repeat
       .bulletin-text
-        display:inline-block
-        margin:0 4px
+        vertical-align: top
+        margin: 0 4px
         font-size: 10px
-        width:95%
       .icon-keyboard_arrow_right
-        line-height: 24px
+        position:absolute
+        right:12px
+        top:8px
         font-size:10px
-
     .background
       position absolute
       top:0
@@ -285,9 +286,8 @@
               &.special
                 bg-image('special_2')
             .text
-              line-height:12px
+              line-height:16px
               font-size: 12px
-
         .bulletin
           width:80%
           margin:0 auto
